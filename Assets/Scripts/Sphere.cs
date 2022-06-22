@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sphere : Shape
+public class Sphere : Shape // Inheritance
 {
     private void Start()
     {
@@ -10,8 +10,9 @@ public class Sphere : Shape
         Color = Color.green;
     }
 
-    protected override void DisplayText()
+    protected override void DisplayText() // Polymorphism / Abstraction
     {
-        Text.text = $"A Green {Name} has been clicked!";
+        Message = $"A Green {Name} has been clicked!";
+        base.DisplayText();
     }
 }

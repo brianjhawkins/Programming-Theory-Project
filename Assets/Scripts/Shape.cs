@@ -7,27 +7,27 @@ public class Shape : MonoBehaviour
 {
     private string m_Name;
     private Color m_Color;
-    private Text m_Text;
+    private string m_Message;
 
-    private void Awake()
+    private void Start()
     {
-        m_Text = FindObjectOfType<Text>();
+        Message = "You clicked on a generic shape!";
     }
 
-    public Text Text
+    public string Message // Encapsulation
     {
         get
         {
-            return m_Text;
+            return m_Message;
         }
 
         set
         {
-            m_Text = value;
+            m_Message = value;
         }
     }
 
-    public string Name
+    public string Name // Encapsulation
     {
         get
         {
@@ -40,7 +40,7 @@ public class Shape : MonoBehaviour
         }
     }
 
-    public Color Color
+    public Color Color // Encapsulation
     {
         get
         {
@@ -55,7 +55,9 @@ public class Shape : MonoBehaviour
 
     protected virtual void DisplayText()
     {
-        m_Text.text = "You clicked on a generic shape!";
+        Text m_Text = FindObjectOfType<Text>();
+
+        m_Text.text = Message;
     }
 
     public void OnMouseDown()

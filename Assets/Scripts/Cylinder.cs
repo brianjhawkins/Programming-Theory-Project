@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cylinder : Shape
+public class Cylinder : Shape // Inheritance
 {
     private void Start()
     {
@@ -10,8 +10,9 @@ public class Cylinder : Shape
         Color = Color.blue;
     }
 
-    protected override void DisplayText()
+    protected override void DisplayText() // Polymorphism / Abstraction
     {
-        Text.text = $"You clicked on a Blue {Name}!";
+        Message = $"You clicked on a Blue {Name}!";
+        base.DisplayText();
     }
 }

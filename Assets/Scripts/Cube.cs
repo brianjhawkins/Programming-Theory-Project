@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cube : Shape
+public class Cube : Shape // Inheritance
 {
     private void Start()
     {
@@ -11,8 +11,9 @@ public class Cube : Shape
         Color = Color.red;
     }
 
-    protected override void DisplayText()
+    protected override void DisplayText() // Polymorphism / Abstraction
     {
-        Text.text = $"The Red {Name} has been selected!";
+        Message = $"The Red {Name} has been selected!";
+        base.DisplayText();
     }
 }
